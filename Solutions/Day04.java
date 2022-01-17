@@ -8,12 +8,12 @@ public class Day04 {
     ArrayList<String> fields = new ArrayList<>(Arrays.asList("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"));
 
     public Day04() throws FileNotFoundException {
-        ArrayList<String> temp = new ArrayList<>(Arrays.asList(new Scanner(new File("data.txt")).useDelimiter("\\Z").next().split("\r\n\r\n")));
-        for (String st : temp) {
+        ArrayList<String> passportsUnsorted = new ArrayList<>(Arrays.asList(new Scanner(new File("data.txt")).useDelimiter("\\Z").next().split("\r\n\r\n")));
+        for (String st : passportsUnsorted) {
             HashMap<String, String> passportFields = new HashMap<>();
-            for (String a : st.split("\r\n")) {
-                for (String b : a.split(" ")) {
-                    passportFields.put(b.split(":")[0], b.split(":")[1]);
+            for (String fieldsUnsorted : st.split("\r\n")) {
+                for (String keyValues : fieldsUnsorted.split(" ")) {
+                    passportFields.put(keyValues.split(":")[0], keyValues.split(":")[1]);
                 }
             }
             passports.add(passportFields);
