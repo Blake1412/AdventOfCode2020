@@ -27,7 +27,7 @@ public class Day03 {
         int position = 0, answer = 0;
 
         for (int i = 0; i < treeRows.size(); i += slopeY) {
-            if (treeRows.get(i).get(position) == true) {
+            if (treeRows.get(i).get(position)) {
                 answer++;
             }
             position += slopeX;

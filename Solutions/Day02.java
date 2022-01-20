@@ -30,7 +30,7 @@ public class Day02 {
                     count++;
                 }
             }
-            if (count >= Integer.valueOf(frequencies.get(i).split("-")[0]) && count <= Integer.valueOf(frequencies.get(i).split("-")[1])) {
+            if (count >= Integer.parseInt(frequencies.get(i).split("-")[0]) && count <= Integer.parseInt(frequencies.get(i).split("-")[1])) {
                 answer++;
             }
         }
@@ -41,8 +41,8 @@ public class Day02 {
         int answer = 0;
 
         for (int i = 0; i < passwords.size(); i++) {
-            if (passwords.get(i).charAt(Integer.valueOf(frequencies.get(i).split("-")[0]) - 1) == characters.get(i) ^
-                passwords.get(i).charAt(Integer.valueOf(frequencies.get(i).split("-")[1]) - 1) == characters.get(i)) {
+            if (passwords.get(i).charAt(Integer.parseInt(frequencies.get(i).split("-")[0]) - 1) == characters.get(i) ^
+                passwords.get(i).charAt(Integer.parseInt(frequencies.get(i).split("-")[1]) - 1) == characters.get(i)) {
                 answer++;
             }
         }
