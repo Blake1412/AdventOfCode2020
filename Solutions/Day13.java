@@ -27,15 +27,16 @@ public class Day13 {
                 .toList());
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public int part1() {
         int busArrivalTime = busIntervals.stream()
                 .map(i -> (arrivalTime / i + 1) * i)
                 .reduce(Integer::min)
-                .orElse(0);
+                .get();
         int busID = busIntervals.stream()
                 .filter(x -> busArrivalTime % x == 0)
                 .findFirst()
-                .orElse(0);
+                .get();
 
         return busID * (busArrivalTime - arrivalTime);
     }
